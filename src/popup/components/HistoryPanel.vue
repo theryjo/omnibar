@@ -202,7 +202,6 @@ function toolForHistoryItem(item: CommandExecution) {
   &__output-line {
     font-size: 12px;
     opacity: .8;
-    white-space: nowrap;
   }
 }
 </style>

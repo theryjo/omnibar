@@ -1,5 +1,5 @@
 <template>
-  <div>An empty sample tool</div>
+  <div></div>
 </template>
 
 <script setup lang="ts"></script>

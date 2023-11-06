@@ -1,8 +1,8 @@
 <template>
   <component
     class="tool-panel-cmp"
-    :is="props.tool.pane"
-    v-if="props.tool.pane"
+    :is="props.tool.toolPane"
+    v-if="props.tool.toolPane"
     :cmd-full="cmdFull"
     :cmd-input="cmdInput"
     @set-command="onSetCommand"

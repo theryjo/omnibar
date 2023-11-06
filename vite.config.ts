@@ -16,6 +16,14 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: resolve(__dirname, 'src/popup/popup.html'),
+        frame_chessboard: resolve(
+          __dirname,
+          'src/frames/chessboard/chessboard.html',
+        ),
+        frame_emoji: resolve(
+          __dirname,
+          'src/frames/emoji/emoji.html',
+        ),
       },
     },
   },

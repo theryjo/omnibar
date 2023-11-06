@@ -1,14 +1,19 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import NullTool from '@/popup/tools/null/null'
+import LoremIpsum from '@/popup/tools/lorem/lorem'
+import ColorPicker from '@/popup/tools/colorpicker/colorpicker'
+import Links from '@/popup/tools/links/links'
+import Chessboard from '@/popup/tools/chessboard/chessboard'
+import Emoji from '@/popup/tools/emoji/emoji'
+import Environments from '@/popup/tools/environments/environments'
 
 export interface Tool {
   name: string
   description: string | null
   commandLong: string
   commandShort: string | null
-  commandValidator: ((cmd: string) => boolean) | null
-  pane: any
+  toolPane: any
+  validator: ((cmd: string) => boolean) | null
   executor: ((execId: string, cmd: string) => void) | null
 }
 
@@ -19,7 +24,15 @@ interface ToolEntry {
 
 export const useToolStore = defineStore('tool', () => {
   const toolEntries = ref(
-    [NullTool].map(
+    // eslint-disable-next-line
+    [
+      LoremIpsum as Tool,
+      ColorPicker as Tool,
+      Links as Tool,
+      Chessboard as Tool,
+      Emoji as Tool,
+      Environments as Tool,
+    ].map(
       (t) =>
         ({
           commands: [t.commandLong, t.commandShort].filter((x) => !!x),

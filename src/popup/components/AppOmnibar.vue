@@ -138,7 +138,7 @@ const cmdToolInstance = computed(
   () => toolStore.getTool(cmdTool.value)?.instance,
 )
 const isCmdValid = computed(() => {
-  const validator = cmdToolInstance.value?.commandValidator
+  const validator = cmdToolInstance.value?.validator
   return cmdToolInstance.value && (!validator || validator(cmdFull.value))
 })
 const cmdSuggestions = computed(() => {
